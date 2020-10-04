@@ -101,8 +101,8 @@ Ambassador
 	flag = F13AMBASSADOR
 	head_announce = list("Security")
 	faction = "NCR"
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 0
+	spawn_positions = 0
 	description = "You are the political and diplomatic attaché to the NCR forces in the area. Though you are not part of the military, and should avoid conflict, you wield great bureaucratic power."
 	supervisors = "Colonel"
 	req_admin_notify = 1
@@ -251,8 +251,8 @@ Corporal
 	title = "NCR Corporal"
 	flag = F13CORPORAL
 	faction = "NCR"
-	total_positions = 3
-	spawn_positions = 3
+	total_positions = 4
+	spawn_positions = 4
 	description = "You are a Corporal, an experienced enlisted soldier with a high degree of skill in a particular area. You work closely with your squad, taking orders from your Sergeant directly to achieve the NCR's goals and follow the chain of command, to your commanding officer, the Captain."
 	supervisors = "Sergeants and above"
 	selection_color = "#fff5cc"
@@ -368,8 +368,8 @@ NCR Military Police
 	title = "NCR Military Police"
 	flag = F13NCRMP
 	faction = "NCR"
-	total_positions = 3
-	spawn_positions = 3
+	total_positions = 0
+	spawn_positions = 0
 	description = "You are the primary enforcers of NCR law within the ranks of the local embassy. You are technically exempt from the standard chain of command, answering only to High-Command, and specifically, the NCR Office of Special Investigations (NCROSI). You are NOT to engage in direct combat with the enemy unless truly nessecary, but instead enforce laws and regulations within the NCR's control."
 	supervisors = "NCROSI"
 	selection_color = "#fff5cc"
@@ -404,8 +404,8 @@ Trooper
 	title = "NCR Trooper"
 	flag = F13TROOPER
 	faction = "NCR"
-	total_positions = 8
-	spawn_positions = 8
+	total_positions = 16
+	spawn_positions = 16
 	description = "You answer to everyone above you in the chain of command, taking orders from the Corporals or the Sergeants directly and obeying all commands given by officers such as the Lieutenant and Captain."
 	supervisors = "Corporals and above"
 	selection_color = "#fff5cc"
@@ -454,8 +454,8 @@ Recruit
 	title = "NCR Recruit"
 	flag = F13RECRUIT
 	faction = "NCR"
-	total_positions = 10
-	spawn_positions = 10
+	total_positions = 0
+	spawn_positions = 0
 	description = "You answer to the Sergeants or Corporals, following the chain of command, to your commanding officer, the Captain."
 	supervisors = "Corporals and above"
 	selection_color = "#fff5cc"
@@ -483,32 +483,32 @@ Recruit
 		/obj/item/storage/bag/money/small/ncrenlisted)
 
 /*
-Non-Combatant
+Support Personnel
 */
-/datum/job/ncr/f13noncombatant
-	title = "NCR Non-Combatant"
-	flag = F13NONCOMBATANT
+/datum/job/ncr/f13support
+	title = "NCR Support Personnel"
+	flag = F13SUPPORT
 	faction = "NCR"
 	total_positions = 4
 	spawn_positions = 4
-	description = "You are a noncombatant member of the NCR assigned the vital duty of helping them with cooking, farming, mining, engineering and serving as an on-base doctor and other non-combative tasks. While you have been to basic training, it was rushed and hardly prepared you for the horrors of war. Your sidearm is to be used in your own defense, only."
+	description = "You are base support personnel of the NCR Army assigned the vital duty of helping them with cooking, farming, mining, engineering and serving as an on-base doctor and other non-combative tasks. While you have been to basic training, it was rushed and hardly prepared you for the horrors of war. Your sidearm is to be used in your own defense, only."
 	supervisors = "everyone in the NCR"
 	selection_color = "#fff5cc"
 
-	outfit = /datum/outfit/job/ncr/f13noncombatant
+	outfit = /datum/outfit/job/ncr/f13support
 
 	loadout_options = list(
-	/datum/outfit/loadout/ncbdoctor, //Non-Combatant Doctor
-	/datum/outfit/loadout/ncbengineer, // Non-Combatant Engineer
-	/datum/outfit/loadout/ncbassistant // Non-Combatant Assistant
+	/datum/outfit/loadout/nspdoctor, //Support Personnel Doctor
+	/datum/outfit/loadout/nspengineer, // Support Personnel Engineer
+	/datum/outfit/loadout/nspassistant // Support Personnel Assistant
 	)
 
-/datum/outfit/job/ncr/f13noncombatant
-	name = "NCR Non-Combatant"
-	jobtype = /datum/job/ncr/f13noncombatant
+/datum/outfit/job/ncr/f13support
+	name = "NCR Support Personnel"
+	jobtype = /datum/job/ncr/f13support
 	id = 			/obj/item/card/id/dogtag/ncrtrooper
 	uniform =  		/obj/item/clothing/under/f13/ncr
-	accessory =     /obj/item/clothing/accessory/armband/engine/ncr/ncb
+	accessory =     /obj/item/clothing/accessory/armband/engine/ncr/nsp
 	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor
 	suit_store = 	/obj/item/gun/ballistic/automatic/pistol/ninemil
 	ears = 			/obj/item/radio/headset //no NCR comms
@@ -522,8 +522,8 @@ Non-Combatant
 		/obj/item/storage/bag/ore = 1,
 		/obj/item/storage/bag/money/small/ncrenlisted)
 
-/datum/outfit/loadout/ncbdoctor
-	name = "Non-Combatant Doctor"
+/datum/outfit/loadout/nspdoctor
+	name = "Support Personnel Doctor"
 	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor/labcoat
 	head = 			/obj/item/clothing/head/f13/ncr/medic
 	glasses = 		/obj/item/clothing/glasses/hud/health
@@ -532,12 +532,12 @@ Non-Combatant
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m9mm=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=2, \
-		/obj/item/storage/pill_bottle/mining, \
-		/obj/item/storage/firstaid/regular,  \
-		/obj/item/book/granter/trait/chemistry)
+		/obj/item/storage/pill_bottle/mining=1, \
+		/obj/item/storage/firstaid/regular=1,  \
+		/obj/item/book/granter/trait/chemistry=1)
 
-/datum/outfit/loadout/ncbengineer
-	name = "Non-Combatant Engineer"
+/datum/outfit/loadout/nspengineer
+	name = "Support Personnel Engineer"
 	suit =          /obj/item/clothing/suit/armor/f13/ncrarmor/mantle
 	head = 			/obj/item/clothing/head/hardhat/ncr
 	glasses = 		/obj/item/clothing/glasses/welding
@@ -552,12 +552,12 @@ Non-Combatant
 		/obj/item/grenade/plastic=1, \
 		/obj/item/stack/sheet/metal/fifty=2, \
 		/obj/item/stack/sheet/glass/fifty=1, \
-		/obj/item/storage/box/emptysandbags,  \
+		/obj/item/storage/box/emptysandbags=2,  \
 		/obj/item/clothing/head/f13/ncr/goggles
 		)
 
-/datum/outfit/loadout/ncbassistant
-	name = "Non-Combatant Assistant"
+/datum/outfit/loadout/nspassistant
+	name = "Support Personnel Assistant"
 	backpack_contents = list(
 		/obj/item/storage/bag/plants, \
 		/obj/item/clothing/suit/apron/chef, \
